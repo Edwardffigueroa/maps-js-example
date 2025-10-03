@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps Example - Leaflet, OpenStreetMap & Google Maps</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Leaflet Draw CSS para dibujo de zonas -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+
+  <!-- Leaflet.GridLayer.GoogleMutant CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.gridlayer.googlemutant@0.14.0/dist/Leaflet.GoogleMutant.css" />
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🗺️ Maps Example</h1>
+      <p>Leaflet.js + OpenStreetMap + Google Maps</p>
+    </header>
+
+    <div class="controls">
+      <div class="map-selector">
+        <label>Seleccionar Mapa Base:</label>
+        <button class="map-btn active" data-map="osm">OpenStreetMap</button>
+        <button class="map-btn" data-map="google-roadmap">Google Roadmap</button>
+        <button class="map-btn" data-map="google-satellite">Google Satellite</button>
+        <button class="map-btn" data-map="google-hybrid">Google Hybrid</button>
+        <button class="map-btn" data-map="google-terrain">Google Terrain</button>
+      </div>
+
+      <div class="action-buttons">
+        <button id="loadLocations" class="btn btn-primary">Cargar Ubicaciones</button>
+        <button id="loadZones" class="btn btn-secondary">Cargar Zonas</button>
+        <button id="addCustomMarker" class="btn btn-success">Agregar Marker Personalizado</button>
+        <button id="clearMap" class="btn btn-danger">Limpiar Mapa</button>
+      </div>
+    </div>
+
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+
+    <div class="info-panel">
+      <h3>Información</h3>
+      <div id="infoContent">
+        <p>Haz clic en un marcador o zona para ver información.</p>
+      </div>
+    </div>
+
+    <div class="legend">
+      <h4>Leyenda</h4>
+      <div class="legend-item">
+        <span class="legend-color" style="background: #FF6B6B;"></span>
+        <span>Universidad</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color" style="background: #4ECDC4;"></span>
+        <span>Punto de Interés</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color" style="background: #45B7D1;"></span>
+        <span>Parque</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color" style="background: #FFA07A;"></span>
+        <span>Monumento</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color" style="background: #98D8C8;"></span>
+        <span>Zona</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Leaflet Draw JS para dibujo de zonas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
+  <!-- Leaflet.GridLayer.GoogleMutant JS - permite usar Google Maps con Leaflet -->
+  <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@0.14.0/dist/Leaflet.GoogleMutant.js"></script>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
